@@ -1,90 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Little Astra Games - An indie game studio crafting memorable experiences.">
-  <title>Little Astra Games</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Little Astra Games | An indie game studio crafting memorable experiences."
+        />
+        <title>Little Astra Games</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka+One&display=swap"
+            rel="stylesheet"
+        />
 
-  <!-- Navigation -->
-  <header class="site-header">
-    <nav class="nav-container">
-      <a href="#" class="logo">Little Astra Games</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <header class="site-header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Little Astra Games</a>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Little Astra Games</h1>
-      <p>Indie studio crafting worlds worth exploring.</p>
-      <a href="#games" class="btn">See Our Games</a>
-    </div>
-  </section>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Little Astra Games</h1>
+                <p>Indie studio crafting worlds worth exploring.</p>
+                <a href="games.html" class="btn">See Our Games</a>
+            </div>
+        </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>We're a small indie game studio passionate about creating unique and memorable gaming experiences. From concept to release, every detail matters to us.</p>
-    </div>
-  </section>
+        <!-- Highlights -->
+        <section class="section">
+            <div class="container">
+                <h2>What We Do</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <h3>Godot First</h3>
+                        <p>
+                            We build all of our games using the Godot game
+                            engine. It's open source, powerful, and we believe
+                            in its future by building all Little Astra Games'
+                            games on it.
+                        </p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Indie to the Core</h3>
+                        <p>
+                            We're a small, independent indie game studio making
+                            the games we want to play.
+                        </p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Learn & Grow</h3>
+                        <p>
+                            We're dedicated to helping people learn the Godot
+                            engine and build real skills that lead to real jobs
+                            in game development by providing educational
+                            material, some open sourced code, and tutorials.
+                        </p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Develop Job Opportunities</h3>
+                        <p>
+                            Not only is educational growth a cornerstone of
+                            Little Astra Games, we are also looking to grow the
+                            job market for Godot developers, artists, composers,
+                            etc. The current Godot job market is limited to
+                            freelancers and the growth of development studios
+                            like ours being Godot first will help drive that
+                            demand.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Games -->
-  <section class="section section-alt" id="games">
-    <div class="container">
-      <h2>Our Games</h2>
-      <div class="games-grid">
-        <div class="game-card">
-          <div class="game-card-placeholder"></div>
-          <h3>Coming Soon</h3>
-          <p>Our first title is in development. Stay tuned for announcements!</p>
-        </div>
-        <!--
-        <div class="game-card">
-          <div class="game-card-placeholder"></div>
-          <h3>Game Title</h3>
-          <p>Short description of the game.</p>
-        </div>
-        -->
-      </div>
-    </div>
-  </section>
+        <!-- Latest News / CTA -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2>Stay In The Loop</h2>
+                <p>
+                    We're working on something exciting. Follow us to be the
+                    first to know when we have news to share.
+                </p>
+                <div class="cta-buttons">
+                    <a href="about.html" class="btn">Learn About Us</a>
+                    <a href="contact.html" class="btn btn-outline"
+                        >Get In Touch</a
+                    >
+                </div>
+            </div>
+        </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Get In Touch</h2>
-      <p>Have questions, feedback, or just want to say hi? Reach out to us.</p>
-      <ul class="social-links">
-        <!-- Update these links when your socials are ready -->
-        <li><a href="#" aria-label="Twitter">Twitter / X</a></li>
-        <li><a href="#" aria-label="Discord">Discord</a></li>
-        <li><a href="#" aria-label="Email">Email</a></li>
-      </ul>
-    </div>
-  </section>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container footer-content">
+                <p>&copy; 2026 Little Astra Games. All Rights Reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Little Astra Games. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
+        <script src="js/main.js"></script>
+    </body>
 </html>
