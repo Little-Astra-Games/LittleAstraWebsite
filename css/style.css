@@ -24,8 +24,8 @@
   --color-gold: #f4c862;
   --color-white: #ffffff;
 
-  --font-body: 'Nunito', sans-serif;
-  --font-display: 'Fredoka One', cursive;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --max-width: 1100px;
   --radius: 16px;
   --radius-sm: 10px;
@@ -416,6 +416,56 @@ body > * {
   box-shadow: 0 0 12px rgba(184, 169, 212, 0.4);
 }
 
+/* ===== Learn Grid ===== */
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.learn-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid rgba(94, 196, 198, 0.08);
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.learn-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(94, 196, 198, 0.1);
+  border-color: rgba(94, 196, 198, 0.2);
+}
+
+.learn-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gold);
+  background-color: rgba(244, 200, 98, 0.1);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+.learn-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-cream);
+  margin-bottom: 0.5rem;
+}
+
+.learn-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: none;
+  margin: 0;
+}
+
 /* ===== Games Grid ===== */
 .games-grid {
   display: grid;
@@ -685,6 +735,30 @@ body > * {
   gap: 1rem;
 }
 
+.footer-social {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(94, 196, 198, 0.2);
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+}
+
+.footer-social a:hover {
+  background-color: var(--color-teal);
+  color: var(--color-bg);
+  border-color: var(--color-teal);
+}
+
 .site-footer p {
   color: var(--color-text-muted);
   font-size: 0.9rem;
@@ -732,5 +806,170 @@ body > * {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* ===== Home Page Overrides (W4-inspired) ===== */
+
+body.home .container {
+  max-width: 1200px;
+}
+
+/* Hero — fluid sizing */
+body.home .hero {
+  padding: 8rem 1.5rem 6rem;
+}
+
+body.home .hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 1.25rem;
+}
+
+body.home .hero .hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.home .hero .btn {
+  padding: 1rem 2.8rem;
+  font-size: 1.1rem;
+}
+
+/* Section label — uppercase teal eyebrow */
+body.home .section-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--color-teal);
+  margin-bottom: 0.75rem;
+}
+
+/* Highlights section */
+body.home .section-highlights {
+  padding: 7rem 0;
+  position: relative;
+}
+
+body.home .section-highlights::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-teal), var(--color-coral), transparent);
+}
+
+body.home .section-highlights h2 {
+  font-size: 2.5rem;
+}
+
+/* Highlights grid */
+body.home .highlights-grid {
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* Highlight cards — gradient accent bars */
+body.home .highlight-card {
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body.home .highlight-card::before {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+body.home .highlight-card:nth-child(1)::before {
+  background: linear-gradient(90deg, var(--color-coral), var(--color-gold));
+  box-shadow: 0 0 12px rgba(242, 131, 107, 0.3);
+}
+
+body.home .highlight-card:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--color-mint), var(--color-teal));
+  box-shadow: 0 0 12px rgba(168, 230, 207, 0.3);
+}
+
+body.home .highlight-card:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-coral));
+  box-shadow: 0 0 12px rgba(244, 200, 98, 0.3);
+}
+
+body.home .highlight-card:nth-child(4)::before {
+  background: linear-gradient(90deg, var(--color-lavender), var(--color-teal));
+  box-shadow: 0 0 12px rgba(184, 169, 212, 0.3);
+}
+
+body.home .highlight-card h3 {
+  font-size: 1.4rem;
+}
+
+body.home .highlight-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* CTA section */
+body.home .section-cta {
+  padding: 7rem 0;
+}
+
+body.home .section-cta h2 {
+  font-size: 2.5rem;
+}
+
+body.home .section-cta .cta-buttons {
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+body.home .section-cta .btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* Responsive — home overrides */
+@media (max-width: 600px) {
+  body.home .hero h1 {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+  }
+
+  body.home .hero .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  body.home .hero .btn {
+    padding: 0.85rem 2.2rem;
+    font-size: 1rem;
+  }
+
+  body.home .section-highlights,
+  body.home .section-cta {
+    padding: 4.5rem 0;
+  }
+
+  body.home .section-highlights h2,
+  body.home .section-cta h2 {
+    font-size: 2rem;
+  }
+
+  body.home .highlight-card {
+    padding: 2rem;
+  }
+
+  body.home .section-cta .btn {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
   }
 }
