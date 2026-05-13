@@ -277,7 +277,7 @@ body > * {
 
 /* ===== Hero (Home page) ===== */
 .hero {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -286,7 +286,8 @@ body > * {
   background:
     radial-gradient(ellipse at 30% 80%, rgba(127, 184, 214, 0.08) 0%, transparent 50%),
     radial-gradient(ellipse at 70% 20%, rgba(139, 138, 224, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at center bottom, rgba(184, 182, 238, 0.1) 0%, transparent 60%);
+    radial-gradient(ellipse at center bottom, rgba(184, 182, 238, 0.1) 0%, transparent 60%),
+    url('../images/banner.png') center/cover no-repeat;
 }
 
 .hero h1 {
