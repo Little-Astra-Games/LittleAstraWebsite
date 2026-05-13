@@ -835,6 +835,13 @@ body > * {
     flex-direction: column;
     text-align: center;
   }
+
+  .footer-links,
+  .footer-social {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 
 /* ===== Home Page Overrides (W4-inspired) ===== */
