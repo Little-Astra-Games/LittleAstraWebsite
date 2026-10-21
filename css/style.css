@@ -46,6 +46,12 @@
   --color-pink: #a8b0e4;
   --color-blue: #488cd4;
 
+  /* Ember accents — from the banner's planet (secondary accent only) */
+  --color-ember: #f7b667;
+  --color-ember-warm: #e78d56;
+  --color-ember-deep: #cb6253;
+  --color-ember-wine: #6c1747;
+
   /* Retro atomic-age motifs */
   --atom-orbit: url('../images/atom-orbit.svg');
   --starburst: url('../images/starburst.svg');
@@ -303,17 +309,37 @@ body > * {
   }
 }
 
-/* ===== Hero (Home page) ===== */
-.hero {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 6rem 1.5rem 4rem;
-  background: url('../images/banner.png') center / cover no-repeat;
+/* ===== Banner strip (Home) ===== */
+.hero-banner {
+  padding-top: 4.3rem;
 }
+
+.hero-banner-img {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 7.4 / 1;
+  background: #000000 url('../images/banner-v2.webp') center / cover no-repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* crisp edge so the strip reads as its own band */
+.hero-banner-img::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(122, 217, 255, 0.55) 28%,
+    rgba(231, 141, 86, 0.55) 72%,
+    transparent 100%
+  );
+}
+
 
 .hero h1 {
   font-family: var(--font-display);
@@ -401,7 +427,7 @@ body > * {
 .contact-card {
   background-color: var(--color-surface);
   border-radius: var(--radius);
-  border: 1px solid rgba(122, 217, 255, 0.12);
+  border: 1px solid rgba(231, 141, 86, 0.16);
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
@@ -410,8 +436,8 @@ body > * {
 .value-card:hover,
 .contact-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(145, 159, 219, 0.12);
-  border-color: rgba(122, 217, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(231, 141, 86, 0.14);
+  border-color: rgba(231, 141, 86, 0.4);
 }
 
 /* ===== Highlights Grid (Home) ===== */
@@ -490,8 +516,8 @@ body > * {
 
 .learn-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(145, 159, 219, 0.12);
-  border-color: rgba(122, 217, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(231, 141, 86, 0.14);
+  border-color: rgba(231, 141, 86, 0.4);
 }
 
 .learn-tag {
@@ -971,28 +997,44 @@ body.home .container {
   max-width: 1200px;
 }
 
-/* Hero — fluid sizing */
-body.home .hero {
-  padding: 8rem 1.5rem 6rem;
+/* Intro row: studio text left, flagship right */
+body.home .section-intro {
+  padding: 2rem 0 4.5rem;
 }
 
-body.home .hero h1 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  margin-bottom: 1.25rem;
+body.home .intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  text-align: left;
 }
 
-body.home .hero .hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+body.home .intro-text {
+  text-align: left;
 }
 
-body.home .hero .btn {
-  padding: 1rem 2.8rem;
-  font-size: 1.1rem;
+body.home .intro-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  color: var(--color-cream);
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
+
+body.home .intro-text .hero-subtitle {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0 0 2rem;
+  max-width: 34ch;
+  text-align: left;
+}
+
+body.home .intro-flagship .section-label {
+  text-align: left;
+}
+
 
 /* Section label — uppercase teal eyebrow */
 body.home .section-label {
@@ -1001,7 +1043,7 @@ body.home .section-label {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: var(--color-teal);
+  color: var(--color-ember);
   margin-bottom: 0.75rem;
 }
 
@@ -1183,19 +1225,30 @@ body.home .section-flagship h2 {
 }
 
 body.home .flagship-card {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 3rem;
-  margin-top: 3rem;
+  display: block;
+  margin-top: 1rem;
   text-align: left;
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 1px solid rgba(145, 159, 219, 0.22);
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(231, 141, 86, 0.32);
+  box-shadow: 0 0 40px rgba(231, 141, 86, 0.1);
   background:
-    radial-gradient(ellipse at 15% 10%, rgba(122, 217, 255, 0.1), transparent 60%),
-    linear-gradient(135deg, rgba(27, 33, 80, 0.92) 0%, rgba(16, 20, 47, 0.92) 100%);
+    radial-gradient(ellipse at 15% 10%, rgba(122, 217, 255, 0.08), transparent 60%),
+    radial-gradient(ellipse at 88% 85%, rgba(231, 141, 86, 0.1), transparent 55%),
+    linear-gradient(135deg, rgba(27, 33, 80, 0.92) 0%, rgba(36, 26, 63, 0.92) 100%);
 }
+
+body.home .flagship-card .flagship-img {
+  margin-bottom: 1.25rem;
+}
+
+body.home .flagship-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  color: var(--color-cream);
+  margin: 0 0 0.75rem;
+}
+
 
 body.home .flagship-img {
   display: block;
@@ -1235,11 +1288,14 @@ body.home .flagship-release span {
   color: var(--color-teal);
 }
 
-@media (max-width: 768px) {
-  body.home .flagship-card {
+@media (max-width: 860px) {
+  body.home .intro-row {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
-    padding: 1.75rem;
+    gap: 2.5rem;
+  }
+
+  body.home .intro-text .hero-subtitle {
+    max-width: none;
   }
 }
 
